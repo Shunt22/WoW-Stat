@@ -1,8 +1,7 @@
-package ru.shunt.wowstat.controllers;
+package ru.shunt.wowstat;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
-
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import ru.shunt.wowstat.config.Config;
 
 public class WebInitializer extends SpringBootServletInitializer {

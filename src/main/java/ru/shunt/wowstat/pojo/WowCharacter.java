@@ -1,26 +1,17 @@
 package ru.shunt.wowstat.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
 public class WowCharacter {
 
 	private String realmSlug;
 	private String name;
 	private long raceId;
 	private long specId;
-
-	public String getRealmSlug() {
-		return realmSlug;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public long getRaceId() {
-		return raceId;
-	}
-
-	public long getSpecId() {
-		return specId;
-	}
-
+	private long rating;
 }

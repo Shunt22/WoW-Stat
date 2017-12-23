@@ -1,18 +1,17 @@
 package ru.shunt.wowstat.parse;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
 import ru.shunt.wowstat.database.Talents;
 import ru.shunt.wowstat.database.TalentsRepository;
 import ru.shunt.wowstat.enums.WowSpec;
 import ru.shunt.wowstat.pojo.WowCharacter;
 
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class JsonWorker {
 
@@ -39,7 +38,7 @@ public class JsonWorker {
 		}
 	}
 
-	public void parseCharacter(WowCharacter character, InputStream characterJson, TalentsRepository talRep,String bracket ) throws IOException {
+	public void parseCharacter(WowCharacter character, InputStream characterJson, TalentsRepository talentsRepository, String bracket) throws IOException {
 
 		boolean parsed = false;
 		long specId = character.getSpecId();
@@ -70,12 +69,12 @@ public class JsonWorker {
 				ru.shunt.wowstat.parse.JsonWorker.CharactersInfoStorage.Talents.TalentInfo talentInfo = talents.talentsInfo
 						.get(j);
 
-				Talents tal = talRep.findByBracketAndSpecIdAndTalentId(bracket,spec.getSpecID(),talentInfo.spell.id);
-				if(tal==null){
-					talRep.save(new Talents(spec.getSpecID(),talentInfo.spell.id,1,bracket));
-				}else{
+				Talents tal = talentsRepository.findByBracketAndSpecIdAndTalentId(bracket, spec.getSpecID(), talentInfo.spell.id);
+				if (tal == null) {
+					talentsRepository.save(new Talents(spec.getSpecID(), talentInfo.spell.id, 1, bracket));
+				} else {
 					tal.increasePlayersAmount();
-					talRep.save(tal);
+					talentsRepository.save(tal);
 				}
 
 			}

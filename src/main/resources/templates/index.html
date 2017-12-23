@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>WoW Statistics</title>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+		<!-- own style -->
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<!-- normalize -->
+		<link rel="stylesheet" href="css/normalize.css" />
+		<!-- jQuery and plugs -->
+		<script type="text/javascript" src="js/vendor/jquery-1.11.0.min.js"></script>
+		<!-- Bootstrap js -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<!-- own scrips -->
+		<script type="text/javascript" src="js/navbar.js"></script>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<div class="main">
+			<th:block th:include="fragments/header :: header">...</th:block>
+			<br></br>
+			<div class="panel panel-default">
+				<div class="panel-heading">Hello!</div>
+				<div class="panel-body">
+					<p class="lead">This is my first "useful" website. It was created just to improve my Java, HTML and JavaScript skills.
+						<br></br>
+						<br></br>
+						This site collects and shows some statistics from the WoW(World of Warcraft) game.
+						<br></br>
+						Data comes from EU PvP leaderboard (2v2, 3v3 and RBG) which is provided by <a href="http://blizzard.github.io/api-wow-docs/">WoW API</a> by Blizzard Entertainment.
+					</p>
+					<div style="font-size: 21px">
+						<strong>Things are being used:</strong>
+						<ul>
+							 <li>
+								Server-side
+									<ul>
+										<li><a href="http://spring.io/">Spring framework</a></li>
+										<li><a href="http://www.thymeleaf.org/">Thymeleaf</a></li>
+									</ul>
+							</li>
+							<li>
+								Client-side
+									<ul>
+										<li><a href="http://www.flotcharts.org/">Flot charts</a></li>
+										<li><a href="http://jquery.com/">jQuery</a></li>
+									</ul>
+							</li>
+						</ul>
+						
+						<br></br>Thanks for visiting.
+					</div>
+				</div>
+			</div>
+			<br></br><br></br>
+			<div th:attr="class=footer" th:include="fragments/footer :: footer">...</div>
+		</div>
+	</body>
+</html>

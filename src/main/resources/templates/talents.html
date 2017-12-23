@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>WoW Statistics</title>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+		<!-- own style -->
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<!-- normalize -->
+		<link rel="stylesheet" href="css/normalize.css" />
+		<!-- jQuery and plugs -->
+		<script type="text/javascript" src="js/vendor/jquery-1.11.0.min.js"></script>
+		<!-- wowhead -->
+		<script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script><script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true }</script>
+		<!-- Bootstrap js -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<!-- Moment JS -->
+		<script type="text/javascript" src="js/vendor/moment-with-locales.js"></script>
+		<!-- own scrips -->
+		<script type="text/javascript" src="js/navbar.js"></script>
+		<script type="text/javascript" src="js/dropdown-specs.js"></script>
+		
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<div class="main">
+			<th:block th:include="fragments/header :: header">...</th:block>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<span>Total number of parsed players: <strong th:text="${totalNum}">0</strong></span>
+					<br></br>
+					<em><span id="parseDate">
+						<script type="text/javascript" th:inline="javascript">
+							/*<![CDATA[*/
+								$("#parseDate").text("Last update date: "+moment([[${date}]]).format('llll'));
+							/*]]>*/
+						</script>
+					</span></em>
+					<br></br>
+					<em><span th:utext="'Update ETA: '+${eta}">Undefined</span></em>
+				</div>
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<a class="btn btn-default" href="/talents?bracket=2v2" role="button">2v2</a>
+					<a class="btn btn-default" href="/talents?bracket=3v3" role="button">3v3</a>
+					<a class="btn btn-default" href="/talents?bracket=rbg" role="button">rbg</a>
+				</div>
+			</div>
+			<div class="panel panel-default">	
+				<div class="panel-heading">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+							Select specialization
+							<span class="caret"></span>
+						</button>
+						 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+							<li role="presentation" th:each="wowclass:${classes}">
+									<a role="menuitem" tabindex="-1" th:href="'/talents?bracket='+${url}+'&amp;class='+${wowclass.classID}">
+										<img th:src="${wowclass.url}" width="20" height="20"></img>
+										<th:block th:text="${wowclass.className}">Unknown</th:block>
+									</a>
+							</li>
+						</ul>	
+					</div>
+				</div>
+				<div class="panel-body">
+					<div role="tabpanel">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" th:each="spec:${specs}">
+								<a th:href="'#'+${spec.specID}" th:attr="aria-control=${spec.specID}" role="tab" data-toggle="tab">
+									<img th:src="${spec.url}" width="20" height="20"></img>
+									<th:block th:text="${spec.specName}"></th:block>
+								</a>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane" th:each="spec:${talents}" th:id="${spec.key.id}">
+							<p>
+								<span>Players with this specialization: <strong th:text="${spec.key.num}">0</strong></span>
+							</p>
+							
+							<div class="error" th:unless="${spec.key.num} !=null and ${spec.key.num} gt 0">
+								No one plays this:(
+							</div>	
+							
+							<table class="table table-striped" th:if="${spec.key.num} !=null and ${spec.key.num} gt 0">			
+								<tr th:each="tier,id : ${spec.value}">
+									<th scope="row" th:switch="${id.count}">
+										<th:block th:case="'1'">15</th:block>
+										<th:block th:case="'2'">30</th:block>
+										<th:block th:case="'3'">45</th:block>
+										<th:block th:case="'4'">60</th:block>
+										<th:block th:case="'5'">75</th:block>
+										<th:block th:case="'6'">90</th:block>
+										<th:block th:case="'7'">100</th:block>
+									</th>
+									<td th:each="col: ${tier}">
+										<th:block th:each="map: ${col}">
+											<a th:href="@{http://www.wowhead.com/spell={one}(one=${map.key})}"><th:block th:text="${map.key}">spell</th:block></a>&nbsp;&nbsp;&nbsp;&nbsp;<span th:text="${map.value}+'%'"></span>
+										</th:block>
+									</td>
+								</tr>			 
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div th:attr="class=footer" th:include="fragments/footer :: footer">...</div>
+		</div>
+	</body>
+</html>

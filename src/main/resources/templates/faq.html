@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>WoW Statistics</title>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+		<!-- own style -->
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<!-- normalize -->
+		<link rel="stylesheet" href="css/normalize.css" />
+		<!-- jQuery and plugs -->
+		<script type="text/javascript" src="js/vendor/jquery-1.11.0.min.js"></script>
+		<!-- Bootstrap js -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<!-- own scrips -->
+		<script type="text/javascript" src="js/navbar.js"></script>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<div class="main">
+			<th:block th:include="fragments/header :: header">...</th:block>
+				<div class="panel panel-default" th:each="question:${q}">
+					<div class="panel-heading">
+						<strong>Q:</strong>
+						<th:block th:text="${question.key}"></th:block>
+					</div>
+					<div class="panel-body">
+						<strong>A:</strong>
+						<th:block th:utext="${question.value}"></th:block>
+					</div>
+				</div>
+			<div th:attr="class=footer" th:include="fragments/footer :: footer">...</div>
+		</div>
+	</body>
+</html>

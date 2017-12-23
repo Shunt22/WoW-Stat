@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>WoW Statistics</title>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+		<!-- own style -->
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<!-- normalize -->
+		<link rel="stylesheet" href="css/normalize.css" />
+		<!-- jQuery and plugs -->
+		<script type="text/javascript" src="js/vendor/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="js/vendor/jquery.flot.js"></script>
+		<script type="text/javascript" src="js/vendor/jquery.flot.categories.min.js"></script>
+		<!-- Bootstrap js -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<!-- own scrips -->
+		<script type="text/javascript" src="js/navbar.js"></script>
+		<script type="text/javascript" src="js/plotGraphs.js"></script>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<div class="main">
+			<th:block th:include="fragments/header :: header">...</th:block>
+			<br></br>
+		
+		
+			<h3 style="text-align: center">WoW PvP Specialization Statistic</h3>
+			
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist" id="specsTabs">
+					<li role="presentation" th:each="bracket:${brackets}">
+						<a th:href="'#'+${bracket.toString()}" th:attr="aria-control=${bracket.toString()}" role="tab" data-toggle="tab">
+							<th:block th:text="${bracket.toString()}"></th:block>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="tab-content" style="float:left; width:710px;">
+				<div role="tabpanel" class="tab-pane"  th:each="bracket:${brackets}" th:id="${bracket.toString()}">
+			
+					<div class="plot-container">
+						<div th:id="'spec-placeholder'+${bracket.toString()}" class="spec-placeholder" style="float:left; width:675px;"></div>
+					</div>
+						
+				</div>
+				
+			</div>
+			<p id="spec-choices" class="specsChoices" style="float:right; width:150px;">
+				<th:block th:each="clazz:${classes}">
+					<input type="checkbox" th:name="${clazz}" checked="checked" th:id="'id'+${clazz}"></input>
+					<label th:attr="for='id'+${clazz}" th:text="${clazz}"></label><br></br>
+				</th:block>
+				<button type="button" class="btn btn-info turnOn" id="turnOn">Turn On All</button>
+				<br></br>
+				<button style="margin-top: 5px;" type="button" class="btn btn-info turnOff" id="turnOff">Turn Off All</button>
+			</p>
+			<div style="clear: both;"></div>
+			<br></br><br></br>
+			
+			<h3 style="text-align: center">WoW PvP Race Statistic</h3>
+			
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist" id="racesTabs">
+					<li role="presentation" th:each="bracket:${brackets}">
+						<a th:href="'#'+${bracket.toString()}+'r'" th:attr="aria-control=${bracket.toString()}+'r'" role="tab" data-toggle="tab">
+							<th:block th:text="${bracket.toString()}"></th:block>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-content" style="float:left; width:710px;">
+				<div role="tabpanel" class="tab-pane"  th:each="bracket:${brackets}" th:id="${bracket.toString()}+'r'">
+			
+					<div class="plot-container">
+						<div th:id="'race-placeholder'+${bracket.toString()}" class="race-placeholder"></div>
+					</div>
+				</div>
+			</div>
+			<p id="race-choices" class="racesChoices" style="float:right; width:150px;" >
+				<input type="checkbox" checked="checked" name="Alliance" id="idAlliance" />
+				<label for="idAlliance">Alliance</label><br />
+						
+				<input type="checkbox" checked="checked" name="Horde" id="idHorde" />
+				<label for="idHorde">Horde</label><br />
+			</p>
+			<div style="clear: both;"></div>
+			<br></br><br></br>
+			<div th:attr="class=footer" th:include="fragments/footer :: footer">...</div>
+		</div>
+	</body>
+</html>

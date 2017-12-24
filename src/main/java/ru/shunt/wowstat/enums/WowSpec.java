@@ -61,7 +61,7 @@ public enum WowSpec {
 
 	}
 
-	private WowSpec(WowClass clazz, int specID, String specName, String url) {
+	WowSpec(WowClass clazz, int specID, String specName, String url) {
 		this.clazz = clazz;
 		this.specID = specID;
 		this.defaultMap = makeDefaultMap(specID);
@@ -118,10 +118,10 @@ public enum WowSpec {
 			case 71: // Arms
 				firstTier.addAll(Arrays.asList(202297, 7384, 202161));
 				secondTier.addAll(Arrays.asList(46968, 107570, 103827));
-				thirdTier.addAll(Arrays.asList(202316, 772, 107574));
+				thirdTier.addAll(Arrays.asList(215538, 772, 107574));
 				fourthTier.addAll(Arrays.asList(29838, 202163, 197690));
-				fifthTier.addAll(Arrays.asList(215550, 202593, 207982));
-				sixthTier.addAll(Arrays.asList(227266, 215538, 202612));
+				fifthTier.addAll(Arrays.asList(202316, 202593, 202612));
+				sixthTier.addAll(Arrays.asList(227266, 248621, 207982));
 				seventhTier.addAll(Arrays.asList(152278, 203179, 152277));
 				break;
 
@@ -167,11 +167,11 @@ public enum WowSpec {
 			case 70: // Retribution
 				firstTier.addAll(Arrays.asList(198038, 213757, 205228));
 				secondTier.addAll(Arrays.asList(203316, 217020, 218178));
-				thirdTier.addAll(Arrays.asList(198054, 20066, 115750));
-				fourthTier.addAll(Arrays.asList(202271, 202270, 198034));
+				thirdTier.addAll(Arrays.asList(234299, 20066, 115750));
+				fourthTier.addAll(Arrays.asList(202271, 231832, 198034));
 				fifthTier.addAll(Arrays.asList(215661, 205191, 210191));
-				sixthTier.addAll(Arrays.asList(213313, 230332, 202273));
-				seventhTier.addAll(Arrays.asList(223817, 224668, 210220));
+				sixthTier.addAll(Arrays.asList(213313, 230332, 183778));
+				seventhTier.addAll(Arrays.asList(223817, 231895, 210220));
 				break;
 			// Hunter
 			case 253: // Beast Mastery
@@ -187,7 +187,7 @@ public enum WowSpec {
 				firstTier.addAll(Arrays.asList(155228, 193533, 53238));
 				secondTier.addAll(Arrays.asList(194595, 194599, 199527));
 				thirdTier.addAll(Arrays.asList(109215, 199523, 199921));
-				fourthTier.addAll(Arrays.asList(212431, 206817, 213423));
+				fourthTier.addAll(Arrays.asList(212431, 206817, 234588));
 				fifthTier.addAll(Arrays.asList(109248, 19386, 199483));
 				sixthTier.addAll(Arrays.asList(131894, 120360, 194386));
 				seventhTier.addAll(Arrays.asList(214579, 198670, 199522));
@@ -195,8 +195,8 @@ public enum WowSpec {
 			case 255: // Survival
 				firstTier.addAll(Arrays.asList(204315, 200163, 201082));
 				secondTier.addAll(Arrays.asList(206505, 201075, 201078));
-				thirdTier.addAll(Arrays.asList(109215, 199523, 199921));
-				fourthTier.addAll(Arrays.asList(194277, 199518, 162488));
+				thirdTier.addAll(Arrays.asList(109215, 781, 199921));
+				fourthTier.addAll(Arrays.asList(194277, 236698, 162488));
 				fifthTier.addAll(Arrays.asList(191241, 200108, 199483));
 				sixthTier.addAll(Arrays.asList(212436, 194855, 87935));
 				seventhTier.addAll(Arrays.asList(194407, 199543, 191384));
@@ -208,7 +208,7 @@ public enum WowSpec {
 				thirdTier.addAll(Arrays.asList(193531, 114015, 14983));
 				fourthTier.addAll(Arrays.asList(108211, 79008, 31230));
 				fifthTier.addAll(Arrays.asList(196861, 131511, 154904));
-				sixthTier.addAll(Arrays.asList(200802, 193539, 200806));
+				sixthTier.addAll(Arrays.asList(245388, 193539, 200806));
 				seventhTier.addAll(Arrays.asList(152152, 137619, 152150));
 				break;
 			case 260: // Outlaw
@@ -226,18 +226,18 @@ public enum WowSpec {
 				thirdTier.addAll(Arrays.asList(193531, 114015, 14983));
 				fourthTier.addAll(Arrays.asList(200759, 79008, 31230));
 				fifthTier.addAll(Arrays.asList(196951, 131511, 200778));
-				sixthTier.addAll(Arrays.asList(196979, 193539, 206237));
+				sixthTier.addAll(Arrays.asList(245687, 193539, 238104));
 				seventhTier.addAll(Arrays.asList(196976, 137619, 152150));
 				break;
 			// Priest
 			case 256: // Discipline
-				firstTier.addAll(Arrays.asList(200347, 193134, 214621));
+				firstTier.addAll(Arrays.asList(109142, 193134, 214621));
 				secondTier.addAll(Arrays.asList(121536, 64129, 193063));
 				thirdTier.addAll(Arrays.asList(204263, 196704, 205367));
 				fourthTier.addAll(Arrays.asList(129250, 197045, 123040));
-				fifthTier.addAll(Arrays.asList(197419, 10060, 109142));
-				sixthTier.addAll(Arrays.asList(152118, 110744, 120517));
-				seventhTier.addAll(Arrays.asList(204197, 200309, 204065));
+				fifthTier.addAll(Arrays.asList(246393, 152118, 204065));
+				sixthTier.addAll(Arrays.asList(204197, 110744, 120517));
+				seventhTier.addAll(Arrays.asList(10060, 200309, 246287));
 				break;
 			case 257: // Holy
 				firstTier.addAll(Arrays.asList(200128, 200153, 193155));
@@ -269,12 +269,12 @@ public enum WowSpec {
 				break;
 			case 251: // Frost
 				firstTier.addAll(Arrays.asList(207057, 194878, 207061));
-				secondTier.addAll(Arrays.asList(207060, 194909, 57330));
-				thirdTier.addAll(Arrays.asList(207126, 207127, 207142));
+				secondTier.addAll(Arrays.asList(207060, 207061, 57330));
+				thirdTier.addAll(Arrays.asList(207126, 194913, 207142));
 				fourthTier.addAll(Arrays.asList(207161, 207167, 207170));
-				fifthTier.addAll(Arrays.asList(207188, 207200, 212765));
-				sixthTier.addAll(Arrays.asList(207230, 207104, 194912));
-				seventhTier.addAll(Arrays.asList(207256, 152279, 194913));
+				fifthTier.addAll(Arrays.asList(207188, 207200, 253593));
+				sixthTier.addAll(Arrays.asList(207230, 194909, 194912));
+				seventhTier.addAll(Arrays.asList(207256, 152279, 207127));
 				break;
 			case 252: // Unholy
 				firstTier.addAll(Arrays.asList(194916, 207264, 207269));
@@ -290,19 +290,19 @@ public enum WowSpec {
 				firstTier.addAll(Arrays.asList(201909, 170374, 210643));
 				secondTier.addAll(Arrays.asList(192063, 108281, 192077));
 				thirdTier.addAll(Arrays.asList(192058, 51485, 196932));
-				fourthTier.addAll(Arrays.asList(117014, 192087, 108283));
-				fifthTier.addAll(Arrays.asList(192235, 117013, 210714));
-				sixthTier.addAll(Arrays.asList(16166, 192249, 210707));
-				seventhTier.addAll(Arrays.asList(114050, 210689, 192222));
+				fourthTier.addAll(Arrays.asList(210707, 192087, 16166));
+				fifthTier.addAll(Arrays.asList(192235, 117013, 117014));
+				sixthTier.addAll(Arrays.asList(192222, 192249, 108283));
+				seventhTier.addAll(Arrays.asList(114050, 210689, 210714));
 				break;
 			case 263:// Enhancement
-				firstTier.addAll(Arrays.asList(201898, 201900, 201897));
+				firstTier.addAll(Arrays.asList(201898, 201900, 19792));
 				secondTier.addAll(Arrays.asList(215864, 196884, 192077));
 				thirdTier.addAll(Arrays.asList(192058, 51485, 196932));
 				fourthTier.addAll(Arrays.asList(192106, 192087, 210853));
 				fifthTier.addAll(Arrays.asList(192234, 210727, 210731));
 				sixthTier.addAll(Arrays.asList(192246, 197211, 197214));
-				seventhTier.addAll(Arrays.asList(114051, 197992, 188089));
+				seventhTier.addAll(Arrays.asList(114051, 246035, 188089));
 				break;
 			case 264:// Restoration
 				firstTier.addAll(Arrays.asList(200071, 73685, 200072));
@@ -315,41 +315,41 @@ public enum WowSpec {
 				break;
 			// Mage
 			case 62: // Arcane
-				firstTier.addAll(Arrays.asList(205022, 205025, 205035));
-				secondTier.addAll(Arrays.asList(212653, 86949, 11958));
+				firstTier.addAll(Arrays.asList(205022, 236628, 205035));
+				secondTier.addAll(Arrays.asList(212653, 86949, 235463));
 				thirdTier.addAll(Arrays.asList(55342, 116011, 1463));
 				fourthTier.addAll(Arrays.asList(157980, 205032, 205028));
-				fifthTier.addAll(Arrays.asList(108839, 113724, 205036));
-				sixthTier.addAll(Arrays.asList(114923, 157976, 20539));
-				seventhTier.addAll(Arrays.asList(155147, 198923, 153626));
+				fifthTier.addAll(Arrays.asList(235711, 113724, 205036));
+				sixthTier.addAll(Arrays.asList(114923, 157976, 205039));
+				seventhTier.addAll(Arrays.asList(155147, 234302, 153626));
 				break;
 			case 63: // Fire
 				firstTier.addAll(Arrays.asList(205020, 205023, 205026));
-				secondTier.addAll(Arrays.asList(212653, 86949, 11958));
+				secondTier.addAll(Arrays.asList(212653, 157981, 235365));
 				thirdTier.addAll(Arrays.asList(55342, 116011, 1463));
-				fourthTier.addAll(Arrays.asList(157981, 205029, 205033));
-				fifthTier.addAll(Arrays.asList(108839, 113724, 205036));
+				fourthTier.addAll(Arrays.asList(235870, 205029, 205033));
+				fifthTier.addAll(Arrays.asList(236058, 113724, 205036));
 				sixthTier.addAll(Arrays.asList(44457, 157976, 205037));
 				seventhTier.addAll(Arrays.asList(155148, 198929, 153561));
 				break;
 			case 64: // Frost
 				firstTier.addAll(Arrays.asList(205021, 205024, 205027));
-				secondTier.addAll(Arrays.asList(212653, 86949, 11958));
+				secondTier.addAll(Arrays.asList(212653, 108839, 235297));
 				thirdTier.addAll(Arrays.asList(55342, 116011, 1463));
 				fourthTier.addAll(Arrays.asList(157997, 205030, 56377));
-				fifthTier.addAll(Arrays.asList(108839, 113724, 205036));
+				fifthTier.addAll(Arrays.asList(235224, 113724, 205036));
 				sixthTier.addAll(Arrays.asList(112948, 157976, 205038));
 				seventhTier.addAll(Arrays.asList(155149, 199786, 153595));
 				break;
 			// Warlock
 			case 265: // Affliction
-				firstTier.addAll(Arrays.asList(48181, 196102, 198590));
-				secondTier.addAll(Arrays.asList(196105, 196103, 196104));
-				thirdTier.addAll(Arrays.asList(219272, 6789, 5484));
-				fourthTier.addAll(Arrays.asList(63106, 196226, 196098));
-				fifthTier.addAll(Arrays.asList(48018, 111400, 108416));
+				firstTier.addAll(Arrays.asList(48181, 196102, 235155));
+				secondTier.addAll(Arrays.asList(196105, 196103, 235157));
+				thirdTier.addAll(Arrays.asList(48018, 6789, 5484));
+				fourthTier.addAll(Arrays.asList(205179, 196226, 196098));
+				fifthTier.addAll(Arrays.asList(219272, 111400, 108416));
 				sixthTier.addAll(Arrays.asList(152107, 108501, 108503));
-				seventhTier.addAll(Arrays.asList(205178, 205179, 215941));
+				seventhTier.addAll(Arrays.asList(234876, 63106, 215941));
 				break;
 			case 266: // Demonology
 				firstTier.addAll(Arrays.asList(196269, 205181, 205145));
@@ -362,83 +362,83 @@ public enum WowSpec {
 				break;
 			case 267: // Destruction
 				firstTier.addAll(Arrays.asList(196406, 205184, 17877));
-				secondTier.addAll(Arrays.asList(205148, 152108, 196104));
-				thirdTier.addAll(Arrays.asList(219272, 6789, 30283));
-				fourthTier.addAll(Arrays.asList(196412, 196408, 196098));
-				fifthTier.addAll(Arrays.asList(48018, 111400, 108416));
+				secondTier.addAll(Arrays.asList(205148, 196412, 235157));
+				thirdTier.addAll(Arrays.asList(48018, 6789, 30283));
+				fourthTier.addAll(Arrays.asList(152108, 196408, 196098));
+				fifthTier.addAll(Arrays.asList(219272, 111400, 108416));
 				sixthTier.addAll(Arrays.asList(152107, 108501, 108503));
 				seventhTier.addAll(Arrays.asList(196410, 196447, 215941));
 				break;
 			// Monk
 			case 268: // Brewmaster
-				firstTier.addAll(Arrays.asList(115173, 116841, 115174));
-				secondTier.addAll(Arrays.asList(115098, 124081, 123986));
-				thirdTier.addAll(Arrays.asList(121817, 115396, 115399));
-				fourthTier.addAll(Arrays.asList(116844, 119392, 119381));
-				fifthTier.addAll(Arrays.asList(122280, 122278, 122783));
-				sixthTier.addAll(Arrays.asList(116847, 123904, 115008));
-				seventhTier.addAll(Arrays.asList(157533, 157676, 152173));
+				firstTier.addAll(Arrays.asList(123986, 196607, 115098));
+				secondTier.addAll(Arrays.asList(115008, 116841, 115173));
+				thirdTier.addAll(Arrays.asList(196721, 115399, 196719));
+				fourthTier.addAll(Arrays.asList(116844, 115315, 119381));
+				fifthTier.addAll(Arrays.asList(122281, 237076, 122278));
+				sixthTier.addAll(Arrays.asList(116847, 132578, 196730));
+				seventhTier.addAll(Arrays.asList(196738, 196736, 196737));
 				break;
 			case 270: // Mistweaver
-				firstTier.addAll(Arrays.asList(115173, 116841, 115174));
-				secondTier.addAll(Arrays.asList(115098, 124081, 123986));
-				thirdTier.addAll(Arrays.asList(121817, 115396, 115399));
-				fourthTier.addAll(Arrays.asList(116844, 119392, 119381));
-				fifthTier.addAll(Arrays.asList(122280, 122278, 122783));
-				sixthTier.addAll(Arrays.asList(116847, 123904, 115008));
-				seventhTier.addAll(Arrays.asList(157535, 157675, 173841));
+				firstTier.addAll(Arrays.asList(123986, 124081, 115098));
+				secondTier.addAll(Arrays.asList(115008, 116841, 115173));
+				thirdTier.addAll(Arrays.asList(197915, 210802, 197900));
+				fourthTier.addAll(Arrays.asList(116844, 198898, 119381));
+				fifthTier.addAll(Arrays.asList(122281, 122783, 122278));
+				sixthTier.addAll(Arrays.asList(116847, 198664, 115313));
+				seventhTier.addAll(Arrays.asList(197908, 197895, 210804));
 				break;
 			case 269: // Windwalker
-				firstTier.addAll(Arrays.asList(115173, 116841, 115174));
-				secondTier.addAll(Arrays.asList(115098, 124081, 123986));
-				thirdTier.addAll(Arrays.asList(121817, 115396, 115399));
-				fourthTier.addAll(Arrays.asList(116844, 119392, 119381));
-				fifthTier.addAll(Arrays.asList(122280, 122278, 122783));
-				sixthTier.addAll(Arrays.asList(116847, 123904, 115008));
-				seventhTier.addAll(Arrays.asList(152175, 157676, 152173));
+				firstTier.addAll(Arrays.asList(123986, 196607, 115098));
+				secondTier.addAll(Arrays.asList(115008, 116841, 115173));
+				thirdTier.addAll(Arrays.asList(115288, 115396, 121817));
+				fourthTier.addAll(Arrays.asList(116844, 115315, 119381));
+				fifthTier.addAll(Arrays.asList(122281, 122783, 122278));
+				sixthTier.addAll(Arrays.asList(116847, 123904, 196740));
+				seventhTier.addAll(Arrays.asList(196743, 152175, 152173));
 				break;
 			// Druid
 			case 102: // Balance
-				firstTier.addAll(Arrays.asList(131768, 102280, 102401));
-				secondTier.addAll(Arrays.asList(145108, 108238, 102351));
-				thirdTier.addAll(Arrays.asList(102355, 102359, 132469));
-				fourthTier.addAll(Arrays.asList(114107, 102560, 33831));
-				fifthTier.addAll(Arrays.asList(99, 102793, 5211));
-				sixthTier.addAll(Arrays.asList(108291, 108373, 124974));
-				seventhTier.addAll(Arrays.asList(152222, 152221, 152220));
+				firstTier.addAll(Arrays.asList(205636, 202425, 202345));
+				secondTier.addAll(Arrays.asList(108238, 102280, 132302));
+				thirdTier.addAll(Arrays.asList(202175, 197491, 197492));
+				fourthTier.addAll(Arrays.asList(5211, 102359, 132469));
+				fifthTier.addAll(Arrays.asList(114107, 102560, 202347));
+				sixthTier.addAll(Arrays.asList(202342, 202359, 202360));
+				seventhTier.addAll(Arrays.asList(202770, 202354, 202430));
 				break;
 			case 103: // Feral
-				firstTier.addAll(Arrays.asList(131768, 102280, 102401));
-				secondTier.addAll(Arrays.asList(145108, 108238, 102351));
-				thirdTier.addAll(Arrays.asList(106707, 102359, 132469));
-				fourthTier.addAll(Arrays.asList(158476, 102543, 102703));
-				fifthTier.addAll(Arrays.asList(99, 102793, 5211));
-				sixthTier.addAll(Arrays.asList(108292, 158497, 124974));
-				seventhTier.addAll(Arrays.asList(155580, 155672, 171746));
+				firstTier.addAll(Arrays.asList(202021, 202022, 155580));
+				secondTier.addAll(Arrays.asList(108238, 102280, 132302));
+				thirdTier.addAll(Arrays.asList(197488, 217615, 197492));
+				fourthTier.addAll(Arrays.asList(5211, 102359, 132469));
+				fifthTier.addAll(Arrays.asList(158476, 102543, 202032));
+				sixthTier.addAll(Arrays.asList(202031, 202028, 52610));
+				seventhTier.addAll(Arrays.asList(236068, 155672, 202060));
 				break;
 			case 104: // Guardian
-				firstTier.addAll(Arrays.asList(131768, 102280, 102401));
-				secondTier.addAll(Arrays.asList(145108, 108238, 102351));
-				thirdTier.addAll(Arrays.asList(106707, 102359, 132469));
-				fourthTier.addAll(Arrays.asList(158477, 102558, 102706));
-				fifthTier.addAll(Arrays.asList(99, 102793, 5211));
-				sixthTier.addAll(Arrays.asList(108293, 158501, 124974));
-				seventhTier.addAll(Arrays.asList(155578, 80313, 155835));
+				firstTier.addAll(Arrays.asList(203953, 155835, 203962));
+				secondTier.addAll(Arrays.asList(204021, 236748, 132302));
+				thirdTier.addAll(Arrays.asList(197488, 202155, 197492));
+				fourthTier.addAll(Arrays.asList(5211, 102359, 132469));
+				fifthTier.addAll(Arrays.asList(158477, 102558, 203964));
+				sixthTier.addAll(Arrays.asList(203974, 155578, 203965));
+				seventhTier.addAll(Arrays.asList(204053, 204066, 80313));
 				break;
 			case 105: // Restoration
-				firstTier.addAll(Arrays.asList(131768, 102280, 102401));
-				secondTier.addAll(Arrays.asList(145108, 108238, 102351));
-				thirdTier.addAll(Arrays.asList(102355, 102359, 132469));
-				fourthTier.addAll(Arrays.asList(158478, 33891, 102693));
-				fifthTier.addAll(Arrays.asList(99, 102793, 5211));
-				sixthTier.addAll(Arrays.asList(108294, 158504, 124974));
-				seventhTier.addAll(Arrays.asList(155577, 155675, 155834));
+				firstTier.addAll(Arrays.asList(200383, 102351, 207383));
+				secondTier.addAll(Arrays.asList(108238, 102280, 132302));
+				thirdTier.addAll(Arrays.asList(197632, 197490, 197491));
+				fourthTier.addAll(Arrays.asList(5211, 102359, 132469));
+				fifthTier.addAll(Arrays.asList(158478, 33891, 200390));
+				sixthTier.addAll(Arrays.asList(207385, 197073, 155675));
+				seventhTier.addAll(Arrays.asList(155577, 197061, 197721));
 				break;
 			// Demon Hunter
 			case 577: // Havoc
-				firstTier.addAll(Arrays.asList(192939, 206475, 203550));
+				firstTier.addAll(Arrays.asList(192939, 232893, 203550));
 				secondTier.addAll(Arrays.asList(203551, 203555, 206478));
-				thirdTier.addAll(Arrays.asList(213241, 206416, 206473));
+				thirdTier.addAll(Arrays.asList(206475, 206416, 206473));
 				fourthTier.addAll(Arrays.asList(196555, 205411, 204909));
 				fifthTier.addAll(Arrays.asList(206476, 211881, 206491));
 				sixthTier.addAll(Arrays.asList(203556, 206477, 193897));

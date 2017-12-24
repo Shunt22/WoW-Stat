@@ -88,7 +88,7 @@
 								No one plays this:(
 							</div>	
 							
-							<table class="table table-striped" th:if="${spec.key.num} !=null and ${spec.key.num} gt 0">			
+							<table class="table table-striped" th:if="${spec.key.num} !=null and ${spec.key.num} gt 0">
 								<tr th:each="tier,id : ${spec.value}">
 									<th scope="row" th:switch="${id.count}">
 										<th:block th:case="'1'">15</th:block>

@@ -1,5 +1,15 @@
 package ru.shunt.wowstat.controllers;
 
+import org.springframework.aop.AopInvocationException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import ru.shunt.wowstat.database.RacesRepository;
+import ru.shunt.wowstat.enums.WowRace;
+import ru.shunt.wowstat.parse.HttpReader.Brackets;
+import ru.shunt.wowstat.pojo.RacesDto;
+
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -7,17 +17,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import org.springframework.aop.AopInvocationException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import ru.shunt.wowstat.database.RacesRepository;
-import ru.shunt.wowstat.enums.WowRace;
-import ru.shunt.wowstat.parse.HttpReader.Brackets;
-import ru.shunt.wowstat.pojo.RacesDto;
 
 @RestController
 public class RacesRest {
@@ -59,13 +58,7 @@ public class RacesRest {
 		}
 
 
-		Collections.sort(pojoList, new Comparator<RacesDto>() {
-
-			@Override
-			public int compare(RacesDto o1, RacesDto o2) {
-				return o1.getFaction().compareTo(o2.getFaction());
-			}
-		});
+		Collections.sort(pojoList, Comparator.comparing(RacesDto::getFaction));
 
 		return pojoList;
 	}

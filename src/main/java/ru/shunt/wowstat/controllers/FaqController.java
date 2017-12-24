@@ -1,11 +1,11 @@
 package ru.shunt.wowstat.controllers;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Controller
 public class FaqController {
@@ -14,7 +14,7 @@ public class FaqController {
 	static {
 		faqMap.put("Where am I?", "This website collects statistic from WoW PvP ladder.");
 		faqMap.put("What things can I find here?",
-				"So far there are statistics for talents, races and specs.");
+				"So far there are statistics for talents, races and specs from 2400 rating and above. ");
 		faqMap.put("From PvP? What ladder?", "2v2, 3v3 and RBG ladders. All from EU host so far.");
 		faqMap.put("How often does statistic update?", "It updates every 24 hours.");
 		faqMap.put(

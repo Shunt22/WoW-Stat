@@ -1,0 +1,1 @@
+web: java -jar target/wowstat-3.0.war

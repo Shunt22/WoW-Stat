@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/wowstat-3.0.war
+web: java -Dserver.port=$PORT -jar target/wowstat-3.0.jar

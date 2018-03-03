@@ -119,7 +119,7 @@ public class HttpReader {
 	public void readCharacters(List<WowCharacter> charactersList) throws IOException {
 
 		for (WowCharacter character : charactersList) {
-			if (character.getRating() < 2400) {
+			if (character.getRating() < 2500) {
 				continue;
 			}
 			try {

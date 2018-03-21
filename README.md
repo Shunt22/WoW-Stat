@@ -1,5 +1,5 @@
 # WoW-Stats
-Source code for World of Warcraft's statistics website. Url: https://wow-pvpstat.herokuapp.com/
+Source code for World of Warcraft's statistics website. Url: https://wow-pvpstat.herokuapp.com/ (It may take a while wakeup and update).
 
 # Installation and Usage
 To use this source code you MUST have Blizzard API key. You can get it for free on here: https://dev.battle.net/.
